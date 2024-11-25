@@ -150,11 +150,12 @@ def register():
         gender = request.form['gender']
         phone = request.form['phone']
         password = request.form['password']
+        role = 'user'
 
         connection = get_db_connection()
         cursor = connection.cursor()
         sql = "INSERT INTO users (username, email, gender, phone, password) VALUES (%s, %s, %s, %s, %s)"
-        data = (username, email, gender, phone, password)
+        data = (username, email, gender, phone, password, role)
         cursor.execute(sql, data)
         connection.commit()
         connection.close()
