@@ -33,7 +33,7 @@
             border-right: 1px solid #ddd; /* Optional border for separation */
             padding-top: 1rem; /* Top padding */
             overflow-y: auto; /* Add scrolling if the sidebar content overflows */
-            z-index: 100; /* Ensure sidebar is always on top */
+            z-index: 1; /* Keeps sidebar beneath the content */
         }
 
         .sidebar h5 {
@@ -69,7 +69,8 @@
         .main-content {
             margin-left: 20%; /* Offset content to account for sidebar width */
             padding: 1rem;
-            flex: 1; /* Allow content to expand and fill the remaining space */
+            z-index: 2; /* Ensures that content appears on top of sidebar */
+            position: relative;
         }
 
         .card-img-top {
